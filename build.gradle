@@ -308,7 +308,7 @@ configure(subprojects.findAll{it.provides}) {
         'Import-Package':
             imports.collect{"${it};version=\"${version}\""}.join(','),
         'Module-Requires': 
-            (transitiveRequires().toSet()).collect{"${it};transitive=true"}.join(','))
+            transitiveRequires().collect{"${it};transitive=true"}.join(','))
     }
   }
 
